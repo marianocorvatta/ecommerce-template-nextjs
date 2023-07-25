@@ -15,6 +15,19 @@ async function getCartProducts() {
 
 export default async function Cart() {
   const { props: products } = await getCartProducts()
+
+  // const handleCheckout = async () => {
+  //   const response = await fetch('/api/cart', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       products,
+  //     }),
+  //   })
+  //   const res = await response.json()
+
+  //   console.log('res', res)
+  //   // window.location.href = `https://checkout.paddle.com/checkout/${id}`
+  // }
   return (
     <main className={styles.productsContainer}>
       <h1>Cart</h1>
