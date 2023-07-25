@@ -1,0 +1,6 @@
+node_modules
+.ide
+generate
+config
+next.config.js
+src/**/*.test.js
