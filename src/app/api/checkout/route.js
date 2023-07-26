@@ -3,10 +3,6 @@ import mercadopage from 'mercadopago'
 
 const CURRENCY_ID = 'ARS'
 
-export async function GET() {
-  return NextResponse.json({ data: 'Hello World' })
-}
-
 export async function POST(request) {
   const res = await request.json()
 
@@ -41,7 +37,7 @@ export async function POST(request) {
 
     return NextResponse.json({ data: result.body })
   } catch (error) {
-    console.log('error', error)
-    return NextResponse.json({ data: { error } })
+    console.log(error)
+    return NextResponse.status(500).send({ message: 'Internal server error' })
   }
 }

@@ -1,8 +1,15 @@
+import { getProductsUrl } from '../api/apiUrl'
 import styles from './Products.module.css'
-import prisma from '../../../lib/prisma'
+import Link from 'next/link'
 
 async function getProducts() {
-  const products = await prisma.product.findMany()
+  const res = await fetch(getProductsUrl())
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  const { data: products } = await res.json()
 
   return {
     props: products,
@@ -17,11 +24,13 @@ export default async function Products() {
       <h1>Products</h1>
       <div className={styles.productList}>
         {products.map((product) => (
-          <div key={product.id} className={styles.productCard}>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-          </div>
+          <Link key={product.id} href={`/products/${product.id}`}>
+            <div className={styles.productCard}>
+              <h2>{product?.title}</h2>
+              <p>{product?.description}</p>
+              <p>$ {product?.price}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </main>
