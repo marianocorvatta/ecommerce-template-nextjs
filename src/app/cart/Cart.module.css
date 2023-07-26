@@ -25,19 +25,3 @@
   gap: 4px;
   align-items: center;
 }
-
-.checkoutBtn {
-  margin-top: 24px;
-  color: #f7f7f7;
-  border-radius: 6px;
-  background: rgba(237, 237, 237, 0.105);
-  font-weight: 500;
-  padding: 0 12px;
-  box-shadow: 0 0 0 1px var(hsla(0, 0%, 100%, 0.14), transparent);
-  display: flex;
-  cursor: pointer;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-}

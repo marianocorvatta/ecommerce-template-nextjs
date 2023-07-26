@@ -1,5 +1,6 @@
 import styles from './Cart.module.css'
 import prisma from '../../../lib/prisma'
+import CheckoutButton from '@/components/cart/CheckoutButton'
 
 async function getCartProducts() {
   const products = await prisma.product.findMany({
@@ -16,18 +17,6 @@ async function getCartProducts() {
 export default async function Cart() {
   const { props: products } = await getCartProducts()
 
-  // const handleCheckout = async () => {
-  //   const response = await fetch('/api/cart', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       products,
-  //     }),
-  //   })
-  //   const res = await response.json()
-
-  //   console.log('res', res)
-  //   // window.location.href = `https://checkout.paddle.com/checkout/${id}`
-  // }
   return (
     <main className={styles.productsContainer}>
       <h1>Cart</h1>
@@ -40,7 +29,7 @@ export default async function Cart() {
           </div>
         ))}
       </div>
-      <button className={styles.checkoutBtn}>Checkout</button>
+      <CheckoutButton products={products} />
     </main>
   )
 }
