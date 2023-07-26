@@ -21,13 +21,13 @@ export default async function Cart() {
     <main className={styles.productsContainer}>
       <h1>Cart</h1>
       <div className={styles.productList}>
-        {products.map((product) => (
+        {/* {products.map((product) => (
           <div key={product.id} className={styles.productCard}>
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p>{product.price}</p>
           </div>
-        ))}
+        ))} */}
       </div>
       <CheckoutButton products={products} />
     </main>
