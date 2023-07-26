@@ -9,7 +9,6 @@ export async function GET() {
 
 export async function POST(request) {
   const res = await request.json()
-  console.log('body', res)
 
   if (request.method !== 'POST') {
     NextResponse.status(405).send({ message: 'Only POST requests allowed' })
@@ -17,8 +16,7 @@ export async function POST(request) {
   }
 
   mercadopage.configure({
-    access_token:
-      'TEST-374000795345143-072514-57bc71ec6fe1a337436c0c721f7c3c54-1433358620',
+    access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
   })
 
   const items = res.products.map((item) => {
