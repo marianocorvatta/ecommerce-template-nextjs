@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>Ecommerce Template</h1>
-      <h2>nextjs + prisma + Vercel Postgres db + MercadoPago</h2>
+      <h2>Nextjs + Prisma + Vercel Postgres db + MercadoPago</h2>
     </main>
   )
 }
