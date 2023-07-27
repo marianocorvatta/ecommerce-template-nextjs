@@ -1,6 +1,7 @@
 import { getProductsUrl } from '../api/apiUrl'
 import styles from './Products.module.css'
 import Link from 'next/link'
+import fetch from 'node-fetch'
 
 async function getProducts() {
   const res = await fetch(getProductsUrl())
