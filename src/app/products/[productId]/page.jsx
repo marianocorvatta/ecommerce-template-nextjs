@@ -1,6 +1,8 @@
 import { getProductByIdUrl } from '../../api/apiUrl'
 import styles from '../Products.module.css'
 
+export const dynamic = 'force-dynamic'
+
 async function getProduct(productId) {
   const res = await fetch(getProductByIdUrl(productId))
 
