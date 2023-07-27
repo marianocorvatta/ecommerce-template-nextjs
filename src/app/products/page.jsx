@@ -1,10 +1,9 @@
 import { getProductsUrl } from '../api/apiUrl'
 import styles from './Products.module.css'
 import Link from 'next/link'
-import fetch from 'node-fetch'
 
 async function getProducts() {
-  const res = await fetch(getProductsUrl())
+  const res = await fetch(getProductsUrl(), { cache: 'no-store' })
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
