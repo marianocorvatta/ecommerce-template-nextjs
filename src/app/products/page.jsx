@@ -2,8 +2,6 @@ import db from '../../../lib/prisma'
 import styles from './Products.module.css'
 import Link from 'next/link'
 
-export const dynamic = 'force-dynamic'
-
 async function getProducts() {
   const products = await db.product.findMany()
 
