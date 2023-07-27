@@ -1,16 +1,14 @@
-import { getProductByIdUrl } from '../../api/apiUrl'
+import db from '../../../../lib/prisma'
 import styles from '../Products.module.css'
 
 export const dynamic = 'force-dynamic'
 
 async function getProduct(productId) {
-  const res = await fetch(getProductByIdUrl(productId))
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  const { data: product } = await res.json()
+  const product = await db.product.findUnique({
+    where: {
+      id: productId,
+    },
+  })
 
   return {
     props: product,

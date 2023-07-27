@@ -1,9 +1,9 @@
 import styles from './Cart.module.css'
-import prisma from '../../../lib/prisma'
+import db from '../../../lib/prisma'
 import CheckoutButton from '@/components/cart/CheckoutButton'
 
 async function getCartProducts() {
-  const products = await prisma.product.findMany({
+  const products = await db.product.findMany({
     where: {
       id: 'clkidr29y0000n0hk6vtld8tl',
     },
@@ -21,13 +21,13 @@ export default async function Cart() {
     <main className={styles.productsContainer}>
       <h1>Cart</h1>
       <div className={styles.productList}>
-        {/* {products.map((product) => (
+        {products.map((product) => (
           <div key={product.id} className={styles.productCard}>
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p>{product.price}</p>
           </div>
-        ))} */}
+        ))}
       </div>
       <CheckoutButton products={products} />
     </main>

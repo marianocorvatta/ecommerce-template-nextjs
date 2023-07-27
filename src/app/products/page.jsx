@@ -1,16 +1,9 @@
-import { getProductsUrl } from '../api/apiUrl'
+import db from '../../../lib/prisma'
 import styles from './Products.module.css'
 import Link from 'next/link'
 
 async function getProducts() {
-  const res = await fetch(getProductsUrl(), { cache: 'no-store' })
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  const { data: products } = await res.json()
-
+  const products = await db.product.findMany()
   return {
     props: products,
   }
