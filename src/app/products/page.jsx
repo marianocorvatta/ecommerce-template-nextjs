@@ -1,4 +1,4 @@
-import db from '../../../lib/prisma'
+// import db from '../../../lib/prisma'
 import styles from './Products.module.css'
 import Link from 'next/link'
 
@@ -14,7 +14,7 @@ async function getProducts() {
   }
 
   const { data: products } = await res.json()
-console.log('products', products)
+  console.log('products', products)
   return {
     props: products,
   }
