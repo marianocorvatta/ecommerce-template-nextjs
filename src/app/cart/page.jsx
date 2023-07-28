@@ -18,7 +18,7 @@ export default async function Cart() {
   const { props: products } = await getCartProducts()
 
   return (
-    <main className={styles.productsContainer}>
+    <section className={styles.productsContainer}>
       <h1>Cart</h1>
       <div className={styles.productList}>
         {products.map((product) => (
@@ -30,6 +30,6 @@ export default async function Cart() {
         ))}
       </div>
       <CheckoutButton products={products} />
-    </main>
+    </section>
   )
 }

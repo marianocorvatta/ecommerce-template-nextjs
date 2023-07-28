@@ -19,7 +19,7 @@ export default async function Product({ params: { productId } }) {
   const { props: product } = await getProduct(productId)
 
   return (
-    <main className={styles.productsContainer}>
+    <section className={styles.productsContainer}>
       <h1>Product</h1>
       <div className={styles.productList}>
         <div key={product.id} className={styles.productCard}>
@@ -28,6 +28,6 @@ export default async function Product({ params: { productId } }) {
           <p>$ {product.price}</p>
         </div>
       </div>
-    </main>
+    </section>
   )
 }

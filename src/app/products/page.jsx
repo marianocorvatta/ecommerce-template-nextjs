@@ -14,7 +14,7 @@ export default async function Products() {
   const { props: products } = await getProducts()
 
   return (
-    <main className={styles.productsContainer}>
+    <section className={styles.productsContainer}>
       <h1>Products</h1>
       <div className={styles.productList}>
         {products.map((product) => (
@@ -27,6 +27,6 @@ export default async function Products() {
           </Link>
         ))}
       </div>
-    </main>
+    </section>
   )
 }
