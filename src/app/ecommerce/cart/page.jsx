@@ -1,6 +1,6 @@
 import styles from './Cart.module.css'
-import db from '../../../lib/prisma'
-import CheckoutButton from '@/components/cart/CheckoutButton'
+import db from '../../../../lib/prisma'
+import CheckoutButton from '@/components/CheckoutButton'
 
 async function getCartProducts() {
   const products = await db.product.findMany({

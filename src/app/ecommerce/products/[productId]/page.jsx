@@ -1,4 +1,5 @@
-import db from '../../../../lib/prisma'
+import ProductCard from '@/components/ProductCard'
+import db from '../../../../../lib/prisma'
 import styles from '../Products.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -22,11 +23,7 @@ export default async function Product({ params: { productId } }) {
     <section className={styles.productsContainer}>
       <h1>Product</h1>
       <div className={styles.productList}>
-        <div key={product.id} className={styles.productCard}>
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <p>$ {product.price}</p>
-        </div>
+        <ProductCard product={product} />
       </div>
     </section>
   )
