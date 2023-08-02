@@ -1,6 +1,6 @@
 # Ecommerce tamplete
 
-Nextjs + Prisma + Vercel Postgres Database + Mercadopago
+Nextjs + Prisma + Vercel Postgres Database + MercadoPago
 
 ## Getting Started
 
