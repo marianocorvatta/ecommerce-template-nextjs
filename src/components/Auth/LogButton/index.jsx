@@ -1,13 +1,15 @@
 'use client'
 
 import { signOut } from 'next-auth/react'
-import styles from './LogOutButton.module.css'
+import styles from './LogButton.module.css'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-export const LogOutButton = () => {
+export const LogButton = () => {
   const { data: session, status } = useSession()
-  console.log('session', session)
+
+  // TODO: check if user is admin
+  // if user is not admin redirect to ecommerce home
 
   return (
     <>
