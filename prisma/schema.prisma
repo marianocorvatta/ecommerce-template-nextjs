@@ -47,17 +47,6 @@ model Session {
   expires      DateTime
   user         User     @relation(fields:[userId], references:[id], onDelete: Cascade)
 }
-
-model Profile {
-  id        String  @id @default(cuid())
-  userId    String  @unique @map("user_id")
-  firstName String?
-  lastName  String?
-  phone     String?
-  role      Role     @default(USER)
-  user      User @relation(fields:[userId], references:[id], onDelete: Cascade)
-}
-
 model User {
   id            String       @default(cuid()) @id
   name          String?
@@ -66,7 +55,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  profile       Profile?
+  role          Role     @default(USER)
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
   @@map(name: "users")

@@ -1,5 +1,6 @@
 import NextAuthProvider from '@/components/Auth/AuthProvider'
-import SessionStatus from '@/components/Auth/SessionStatus'
+import { LogOutButton } from '@/components/Auth/LogOutButton'
+import Nav from '@/components/Nav'
 
 export const metadata = {
   title: 'Admin',
@@ -8,8 +9,11 @@ export const metadata = {
 export default function AdminLayout({ children }) {
   return (
     <NextAuthProvider>
+      <Nav>
+        <h3>Admin</h3>
+        <LogOutButton />
+      </Nav>
       <section>{children}</section>
-      <SessionStatus />
     </NextAuthProvider>
   )
 }
