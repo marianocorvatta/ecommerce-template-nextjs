@@ -3,6 +3,7 @@ import db from '../../../../lib/prisma'
 import styles from './Products.module.css'
 
 async function getProducts() {
+  // TODO: make a api endpoint to get products
   const products = await db.product.findMany()
 
   return {

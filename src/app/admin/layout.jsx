@@ -1,6 +1,5 @@
+import { AdminNav } from '@/components/Admin/AdminNav'
 import NextAuthProvider from '@/components/Auth/AuthProvider'
-import { LogButton } from '@/components/Auth/LogButton'
-import Nav from '@/components/Nav'
 
 export const metadata = {
   title: 'Admin',
@@ -9,10 +8,7 @@ export const metadata = {
 export default function AdminLayout({ children }) {
   return (
     <NextAuthProvider>
-      <Nav>
-        <h3>Admin</h3>
-        <LogButton />
-      </Nav>
+      <AdminNav />
       <section>{children}</section>
     </NextAuthProvider>
   )
