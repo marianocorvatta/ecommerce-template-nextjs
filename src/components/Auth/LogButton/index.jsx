@@ -24,7 +24,7 @@ export const LogButton = () => {
         </button>
       ) : (
         <Link className={styles.logButton} href="/api/auth/signin">
-          Log in
+          Login
         </Link>
       )}
       {status === 'authenticated' && session.user?.name}
