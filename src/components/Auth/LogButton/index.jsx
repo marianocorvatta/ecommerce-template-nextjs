@@ -10,6 +10,8 @@ export const LogButton = () => {
 
   // TODO: check if user is admin
   // if user is not admin redirect to ecommerce home
+  console.log('session', session)
+  console.log('status', status)
 
   return (
     <>
